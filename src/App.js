@@ -23,10 +23,14 @@ export default function App() {
         .then(res => {
           setShow(res.data);
           setSeasons(formatSeasons(res.data._embedded.episodes));
+          console.log('show: ', show);
+          console.log('seasons: ', seasons);
         });
     };
     fetchShow();
-  }, []);
+    console.log('show: ', show);
+    console.log('seasons: ', seasons);
+  }, [selectedSeason]);
 
   const handleSelect = e => {
     setSelectedSeason(e.value);
